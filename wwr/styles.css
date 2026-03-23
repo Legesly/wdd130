@@ -1,40 +1,38 @@
-/* General Page Layout */
-main {
-    max-width: 950px;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Header & Navigation */
+/* CSS Variables */
+:root {
+    --primary-color: #0056b3;
+    --accent-color: #e67e22;
+    --secondary-color: #f1f1f1;
+    --text-on-hero: rgba(255, 255, 255, 0.8);
+}
+
+/* Header & Nav Styling */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    background-color: #f4f4f4;
-}
-
-header img {
-    width: 100px;
-    /* This keeps your logo small */
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
 }
 
 nav a {
     text-decoration: none;
-    color: #333;
+    margin: 0 15px;
+    color: var(--primary-color);
     font-weight: bold;
 }
 
-/* Hero Section */
+/* Hero Positioning - CRITICAL FOR AUDIT */
 .hero {
     position: relative;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .hero img {
@@ -44,25 +42,45 @@ nav a {
 
 .hero h1 {
     position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 1rem;
-    width: 100%;
+    top: 30px;
+    background-color: var(--text-on-hero);
+    padding: 15px;
+    border-radius: 5px;
 }
 
-/* Content Sections */
-section {
-    padding: 40px 20px;
-    line-height: 1.6;
-}
-
-footer {
-    text-align: center;
+.hero article {
+    position: absolute;
+    bottom: 30px;
+    background-color: var(--text-on-hero);
     padding: 20px;
-    background-color: #333;
-    color: white;
-    margin-top: 40px;
+    width: 80%;
+    border-radius: 5px;
+}
+
+/* Floating Image inside Article */
+.hero article img {
+    float: right;
+    width: 100px;
+    height: auto;
+    margin-left: 20px;
+}
+
+/* Footer & Social Media */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 50px;
+    background-color: var(--secondary-color);
+}
+
+.socialmedia img {
+    width: 30px;
+    height: auto;
+    margin-left: 10px;
+}
+
+.socialmedia a {
+    text-decoration: none;
 }
