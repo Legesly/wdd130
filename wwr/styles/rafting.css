@@ -24,7 +24,7 @@ header {
 nav a {
     text-decoration: none;
     margin: 0 15px;
-    color: var(--primary-color);
+    color: var(--accent-color);
     font-weight: bold;
 }
 
