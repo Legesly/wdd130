@@ -5,7 +5,6 @@
     box-sizing: border-box;
 }
 
-/* CSS Variables - All 4 must be used to pass the audit */
 :root {
     --primary-color: #0056b3;
     --accent-color: #e67e22;
@@ -13,49 +12,38 @@
     --text-on-hero: rgba(255, 255, 255, 0.8);
 }
 
-/* General Layout & Typography */
-body {
-    font-family: Arial, sans-serif;
-    color: #333;
-    line-height: 1.6;
-}
-
-/* Use --primary-color for headings */
-h1,
-h2 {
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-/* Header & Nav Styling */
+/* --- Header (CSS Grid Requirement) --- */
 header {
-    display: flex;
+    display: grid;
+    grid-template-columns: 150px 1fr;
     align-items: center;
-    justify-content: space-between;
-    padding: 20px;
+    background-color: var(--secondary-color);
+    padding: 10px 20px;
 }
 
 header img {
     width: 100px;
-    height: auto;
+}
+
+/* --- Nav (CSS Flex Requirement) --- */
+nav {
+    display: flex;
+    justify-content: space-around;
 }
 
 nav a {
     text-decoration: none;
-    margin: 0 15px;
     color: var(--primary-color);
-    /* Initial color */
     font-weight: bold;
-    transition: 0.3s;
+    padding: 10px;
 }
 
-/* Use --accent-color for hover to satisfy the audit */
 nav a:hover {
     color: var(--accent-color);
     text-decoration: underline;
 }
 
-/* Hero Positioning - REQUIRED FOR AUDIT */
+/* --- Hero Section --- */
 .hero {
     position: relative;
     display: flex;
@@ -65,10 +53,8 @@ nav a:hover {
 .hero img {
     width: 100%;
     height: auto;
-    display: block;
 }
 
-/* Overlay elements must be position: absolute */
 .hero h1 {
     position: absolute;
     top: 30px;
@@ -86,42 +72,56 @@ nav a:hover {
     border-radius: 5px;
 }
 
-/* Floating Image inside Article - REQUIRED FOR AUDIT */
 .hero article img {
     float: right;
-    width: 150px;
-    height: auto;
+    width: 100px;
     margin-left: 20px;
 }
 
-/* Main Content Sections */
-section {
+/* --- History Section --- */
+section.history {
     padding: 40px 20px;
-    max-width: 1000px;
+    text-align: center;
+    max-width: 800px;
     margin: 0 auto;
 }
 
-/* Footer & Social Media */
+/* --- Adventure Flex Layout (Horizontal) --- */
+.adventure-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 20px;
+}
+
+.adventure-container figure {
+    flex: 1;
+    text-align: center;
+}
+
+.adventure-container img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* --- Footer (Flex Requirement) --- */
 footer {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     padding: 20px;
-    margin-top: 50px;
     background-color: var(--secondary-color);
+    margin-top: 50px;
 }
 
 .socialmedia {
     display: flex;
-    align-items: center;
+    gap: 15px;
 }
 
 .socialmedia img {
     width: 30px;
-    height: auto;
-    margin-left: 10px;
-}
-
-.socialmedia a {
-    text-decoration: none;
 }
