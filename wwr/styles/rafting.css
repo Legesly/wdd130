@@ -40,7 +40,10 @@
     max-width: 800px;
     margin: 40px auto;
     padding: 20px;
-    background-color: var(--secondary-color);
+    background-color: #f1f1f1;
+    /* Using a light hex code instead of a variable */
+    color: #000000;
+    /* Explicitly setting text to black */
     border-radius: 8px;
 }
 
